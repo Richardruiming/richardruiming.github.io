@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    /* make sure that the padding and margin are included */
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    /* font-family: Arial, sans-serif; */
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+.hero {
+    height:100vh;
+    background-image: url("background.jpg");
+    background-size: cover;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    padding-top: 64px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Overlay text */
+.hero-content {
+  animation: fadeUp 1.2s ease forwards;
+  text-align: center;
+  position: relative;
+  /* background: rgba(0, 0, 0, 0.2); */
+  /* padding: 2rem 5rem; */
+  /* border-radius: 8px; */
+  color : #f5f5f5
+}
+
+
+.hero-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.75;
+  margin-bottom: 2.5 rem;
+}
+
+.quote {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.Mario {
+  font-size: 1rem;
+  opacity: 0.7;
+  font-style: italic;
+  display:block;
+  text-align: right;
+  padding-right: 7rem;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  letter-spacing: 0.15em;
+}
+
+.navbar {
+  position : fixed;
+  width : 100%;
+  top : 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  z-index: 2000;
+  transition: all 0.8s ease;
+
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.navbar.hidden {
+  opacity : 0;
+  pointer-events: none;
+  transform: translateY(-100%); 
+  transition: all 0.8s ease;
+}
+
+.nav-center a,
+.nav-right a {
+  margin: 0 1.2rem;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.nav-center a:hover, .nav-right a:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+
+/* Normal Sections */
+.projects {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(desk.jpg);
+  background-size: cover;
+  padding-top: 64px;
+  /* justify-content: center; */
+}
+
+.overlay-projects {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+
+.section-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  /* margin-bottom: 10rem; */
+  /* margin-top: 0.5rem; */
+  color: #f5f5f5;
+  z-index: 2;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.side-nav {
+  position: fixed;
+  top: 60%;
+  left: 2.5rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 2000;
+  transition: all 0.8s ease;
+}
+
+.side-nav.hidden {
+  opacity: 0;
+  pointer-events: none;
+  /* transform: translateY(-50%) translateX(-100%); */
+  /* transition: all 0.8s ease; */
+}
+
+.side-nav span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  position: relative;
+}
+
+
+.side-nav span::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 2px;
+  height: 30px;
+  background: #f5f5f5;
+  transform: translateX(-50%);
+}
+
+.side-nav span.active {
+  width: 14px;
+  height: 14px;
+  background: white;
+}

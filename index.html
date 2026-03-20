@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Richard Huang</title>
-</head>
-<body>
-  <h1>Hi, I'm Richard</h1>
-  <p>Computer Engineering @ UIUC</p>
-  <p>Interested in Software Engineering & AI</p>
-</body>
+<html lang="en">
+    <head link="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Richard Huang</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <script> src="script.js"</script>
+        <header class="navbar">
+            <div class="nav-left"><span class="logo">Richard Huang</span></div>
+            <nav class="nav-center">
+                <a href="#resume">résumé</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Summer25 @ Cadence</a>
+                <a href="#why-me">Why Me?</a>
+            </nav>
+
+            <div class="nav-right">
+                <a href="#contact">Contact</a>
+            </div>
+        </header>
+
+        <nav class="side-nav hidden">
+          <span data-section="PROJECTS"></span>
+          <span data-section="SUMMER25@CADENCE"></span>
+          <span data-section="WHY ME?"></span>
+        </nav>
+
+
+        <section class="hero">
+            <div class = "overlay"></div>
+            <div class="scroll-indicator">Scroll ↓</div>
+
+            <div class="hero-content">
+                <h1 class="hero-title">HELLO THERE</h1>
+                <p class="hero-subtitle">A little more than a résumé</p>
+                <p class="hero-text">In a hiring process dominated by filters and keyword matching, 
+                    it’s easy to become just another resume. <br/> 
+                    This website is my attempt to make that person visible</p>
+                <P class="quote">"Don't be the best one, be the only one"</P>
+                <P class="Mario">—— MARIO WEISS</P>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="overlay-projects"></div>
+            <h2 id="resume" class="section-title reveal">WHAT HAVE I DONE?</h2>
+        </section>
+    </body>
 </html>
+
