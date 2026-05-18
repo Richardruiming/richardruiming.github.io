@@ -1,54 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head link="stylesheet" href="style.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Richard Huang</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <script> src="script.js"</script>
-        <header class="navbar">
-            <div class="nav-left"><span class="logo">Richard Huang</span></div>
-            <nav class="nav-center">
-                <a href="#resume">résumé</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Richard Huang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="page-glow" aria-hidden="true"></div>
+
+    <header class="navbar">
+        <div class="nav-inner">
+            <a href="#" class="logo">Richard Huang</a>
+            <nav class="nav-links">
+                <a href="#resume">Résumé</a>
                 <a href="#projects">Projects</a>
-                <a href="#experience">Summer25 @ Cadence</a>
-                <a href="#why-me">Why Me?</a>
+                <a href="#experience">Experience</a>
+                <a href="#why-me">Why me</a>
             </nav>
+            <a href="#contact" class="nav-cta">Contact</a>
+        </div>
+    </header>
 
-            <div class="nav-right">
-                <a href="#contact">Contact</a>
+    <main>
+        <section class="hero" id="top">
+            <div class="hero-inner reveal">
+                <p class="hero-eyebrow">Portfolio</p>
+                <h1 class="hero-title">
+                    Built to show who I am beyond the résumé.
+                </h1>
+                <p class="hero-lead">
+                    In a hiring process dominated by filters and keyword matching,
+                    it's easy to become just another resume. This site is my attempt
+                    to make that person visible.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View projects</a>
+                    <a href="#resume" class="btn btn-secondary">Read résumé</a>
+                </div>
             </div>
-        </header>
 
-        <nav class="side-nav hidden">
-          <span data-section="PROJECTS"></span>
-          <span data-section="SUMMER25@CADENCE"></span>
-          <span data-section="WHY ME?"></span>
-        </nav>
+            <blockquote class="hero-quote reveal">
+                <p>"Don't be the best one, be the only one"</p>
+                <cite>— Mario Weiss</cite>
+            </blockquote>
+        </section>
 
-
-        <section class="hero">
-            <div class = "overlay"></div>
-            <div class="scroll-indicator">Scroll ↓</div>
-
-            <div class="hero-content">
-                <h1 class="hero-title">HELLO THERE</h1>
-                <p class="hero-subtitle">A little more than a résumé</p>
-                <p class="hero-text">In a hiring process dominated by filters and keyword matching, 
-                    it’s easy to become just another resume. <br/> 
-                    This website is my attempt to make that person visible</p>
-                <P class="quote">"Don't be the best one, be the only one"</P>
-                <P class="Mario">—— MARIO WEISS</P>
+        <section class="trust" aria-label="Highlights">
+            <p class="trust-label reveal">A little more than a résumé</p>
+            <div class="trust-grid">
+                <article class="trust-card reveal">
+                    <h3>Software engineering</h3>
+                    <p>Building systems with clarity, performance, and maintainability at the center.</p>
+                </article>
+                <article class="trust-card reveal">
+                    <h3>Intern @ Cadence</h3>
+                    <p>Summer 2025 — shipping real work in a production engineering environment.</p>
+                </article>
+                <article class="trust-card reveal">
+                    <h3>Beyond keywords</h3>
+                    <p>Projects, context, and story — not just bullet points on a PDF.</p>
+                </article>
             </div>
         </section>
 
-        <section class="projects" id="projects">
-            <div class="overlay-projects"></div>
-            <h2 id="resume" class="section-title reveal">WHAT HAVE I DONE?</h2>
+        <section class="section" id="projects">
+            <div class="section-header reveal">
+                <h2>What have I done?</h2>
+                <p>Selected work and experiments. More detail on request.</p>
+            </div>
+            <div class="feature-grid">
+                <article class="feature-card reveal">
+                    <span class="feature-tag">Project</span>
+                    <h3>Your next project</h3>
+                    <p>Add a short description, stack, and outcome. Link to repo or demo when ready.</p>
+                    <a href="#" class="feature-link">Learn more →</a>
+                </article>
+                <article class="feature-card reveal">
+                    <span class="feature-tag">Project</span>
+                    <h3>Another highlight</h3>
+                    <p>Short description of the project, stack, and what you shipped or learned.</p>
+                    <a href="#" class="feature-link">Learn more →</a>
+                </article>
+                <article class="feature-card reveal">
+                    <span class="feature-tag">Project</span>
+                    <h3>Open slot</h3>
+                    <p>Duplicate this card block in HTML as you add more work to the portfolio.</p>
+                    <a href="#" class="feature-link">Learn more →</a>
+                </article>
+            </div>
         </section>
-    </body>
+
+        <section class="section section-alt" id="experience">
+            <div class="section-header reveal">
+                <h2>Summer 2025 @ Cadence</h2>
+                <p>Experience that shaped how I build software.</p>
+            </div>
+            <article class="experience-panel reveal">
+                <div class="experience-copy">
+                    <h3>Engineering internship</h3>
+                    <p>
+                        Replace this placeholder with your role, team, and impact —
+                        what you owned, what shipped, and what you learned.
+                    </p>
+                </div>
+                <ul class="experience-meta">
+                    <li><span>When</span> Summer 2025</li>
+                    <li><span>Where</span> Cadence</li>
+                    <li><span>Focus</span> Add your focus area</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="section" id="why-me">
+            <div class="section-header reveal">
+                <h2>Why me?</h2>
+                <p>What I bring that doesn't fit in a one-page PDF.</p>
+            </div>
+            <div class="quote-grid">
+                <blockquote class="quote-card reveal">
+                    <p>I care about craft — readable code, thoughtful tradeoffs, and finishing what I start.</p>
+                </blockquote>
+                <blockquote class="quote-card reveal">
+                    <p>I learn fast and communicate clearly, whether pairing, reviewing, or presenting.</p>
+                </blockquote>
+                <blockquote class="quote-card reveal">
+                    <p>I want to be the person you remember after the interview loop, not just another match.</p>
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="section cta-section" id="resume">
+            <div class="cta-panel reveal">
+                <h2>Let's connect</h2>
+                <p>Download my résumé or reach out — I'd love to hear from you.</p>
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-primary">Download résumé</a>
+                    <a href="#contact" class="btn btn-secondary">Get in touch</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-contact" id="contact">
+            <div class="section-header reveal">
+                <h2>Contact</h2>
+                <p>Email, LinkedIn, GitHub — add your links below.</p>
+            </div>
+            <ul class="contact-links reveal">
+                <li><a href="mailto:you@example.com">you@example.com</a></li>
+                <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Richard Huang</p>
+    </footer>
+</body>
 </html>
-

@@ -1,34 +1,51 @@
-// console.log("script.js loaded");
-
-const reveals = document.querySelectorAll(".reveal");
-const hero = document.querySelector(".hero");
 const navbar = document.querySelector(".navbar");
-const sideNav = document.querySelector(".side-nav");
+const reveals = document.querySelectorAll(".reveal");
+const yearEl = document.getElementById("year");
 
-const heroObserver = new IntersectionObserver(
-([entry]) => {
-    if (entry.isIntersecting) {
-    navbar.classList.remove("hidden");
-    sideNav.classList.add("hidden");
-    } else {
-    navbar.classList.add("hidden");
-    sideNav.classList.remove("hidden");
-    }
-},
-{ threshold: 0.4 }
-);
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
-heroObserver.observe(hero);
+/* Navbar blur on scroll */
+function updateNavbar() {
+  if (!navbar) return;
+  navbar.classList.toggle("scrolled", window.scrollY > 24);
+}
 
-const observer = new IntersectionObserver(
-(entries) => {
+window.addEventListener("scroll", updateNavbar, { passive: true });
+updateNavbar();
+
+/* Scroll reveal */
+const revealObserver = new IntersectionObserver(
+  (entries) => {
     entries.forEach((entry) => {
-    if (entry.isIntersecting) {
+      if (entry.isIntersecting) {
         entry.target.classList.add("active");
-    }
+      }
     });
-},
-{ threshold: 0.4 }
+  },
+  { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
 );
 
-reveals.forEach((el) => observer.observe(el));
+reveals.forEach((el) => revealObserver.observe(el));
+
+/* Active nav link on scroll */
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.getAttribute("id");
+      navLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+      });
+    });
+  },
+  { threshold: 0.35, rootMargin: "-20% 0px -55% 0px" }
+);
+
+sections.forEach((section) => {
+  if (section.id) sectionObserver.observe(section);
+});
