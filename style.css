@@ -288,12 +288,18 @@ a {
 }
 
 .section-alt .section-header,
-.section-alt .experience-panel {
+.section-alt .experience-list {
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .section-alt::before {
@@ -319,7 +325,8 @@ a {
 .section-header p {
   font-size: 1rem;
   color: var(--text-muted);
-  max-width: 32rem;
+  max-width: 52rem;
+  line-height: 1.75;
 }
 
 /* ——— Feature cards (projects) ——— */
@@ -436,6 +443,13 @@ a {
   border-radius: var(--radius);
   border: 1px solid var(--border);
   background: transparent;
+}
+
+.quote-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
 }
 
 .quote-card p {
